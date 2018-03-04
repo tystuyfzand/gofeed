@@ -32,6 +32,7 @@ type Feed struct {
 	TextInput           *TextInput               `json:"textInput,omitempty"`
 	DublinCoreExt       *ext.DublinCoreExtension `json:"dcExt,omitempty"`
 	ITunesExt           *ext.ITunesFeedExtension `json:"itunesExt,omitempty"`
+	MediaExt            *ext.MediaExtension      `json:"mediaExt,omitempty"`
 	Extensions          ext.Extensions           `json:"extensions,omitempty"`
 	Items               []*Item                  `json:"items"`
 	Version             string                   `json:"version"`
