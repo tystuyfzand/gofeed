@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"time"
 
-	"github.com/mmcdole/gofeed/extensions"
+	"github.com/tystuyfzand/gofeed/extensions"
 )
 
 // Feed is the universal Feed type that atom.Feed
@@ -58,6 +58,7 @@ type Item struct {
 	Enclosures      []*Enclosure             `json:"enclosures,omitempty"`
 	DublinCoreExt   *ext.DublinCoreExtension `json:"dcExt,omitempty"`
 	ITunesExt       *ext.ITunesItemExtension `json:"itunesExt,omitempty"`
+	MediaExt        *ext.MediaExtension      `json:"mediaExt,omitempty"`
 	Extensions      ext.Extensions           `json:"extensions,omitempty"`
 	Custom          map[string]string        `json:"custom,omitempty"`
 }

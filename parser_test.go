@@ -11,7 +11,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/mmcdole/gofeed"
+	"github.com/tystuyfzand/gofeed"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -197,4 +197,10 @@ func ExampleParser_ParseString() {
 		panic(err)
 	}
 	fmt.Println(feed.Title)
+}
+
+func Test_ParseMedia(t *testing.T) {
+	fp := gofeed.NewParser()
+
+	fp.ParseURL("http://feeds.bbci.co.uk/news/rss.xml?edition=us")
 }

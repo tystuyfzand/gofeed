@@ -5,10 +5,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/mmcdole/gofeed/atom"
-	"github.com/mmcdole/gofeed/extensions"
-	"github.com/mmcdole/gofeed/internal/shared"
-	"github.com/mmcdole/gofeed/rss"
+	"github.com/tystuyfzand/gofeed/atom"
+	"github.com/tystuyfzand/gofeed/extensions"
+	"github.com/tystuyfzand/gofeed/internal/shared"
+	"github.com/tystuyfzand/gofeed/rss"
 )
 
 // Translator converts a particular feed (atom.Feed or rss.Feed)
@@ -72,6 +72,7 @@ func (t *DefaultRSSTranslator) translateFeedItem(rssItem *rss.Item) (item *Item)
 	item.Enclosures = t.translateItemEnclosures(rssItem)
 	item.DublinCoreExt = rssItem.DublinCoreExt
 	item.ITunesExt = rssItem.ITunesExt
+	item.MediaExt = rssItem.MediaExt
 	item.Extensions = rssItem.Extensions
 	return
 }

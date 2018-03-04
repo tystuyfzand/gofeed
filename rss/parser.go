@@ -5,8 +5,8 @@ import (
 	"io"
 	"strings"
 
-	"github.com/mmcdole/gofeed/extensions"
-	"github.com/mmcdole/gofeed/internal/shared"
+	"github.com/tystuyfzand/gofeed/extensions"
+	"github.com/tystuyfzand/gofeed/internal/shared"
 	"github.com/mmcdole/goxpp"
 )
 
@@ -431,6 +431,10 @@ func (rp *Parser) parseItem(p *xpp.XMLPullParser) (item *Item, err error) {
 
 		if dc, ok := item.Extensions["dc"]; ok {
 			item.DublinCoreExt = ext.NewDublinCoreExtension(dc)
+		}
+
+		if media, ok := item.Extensions["media"]; ok {
+			item.MediaExt = ext.NewMediaExtension(media)
 		}
 	}
 
